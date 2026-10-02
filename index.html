@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Corso di Informatica della Classe X</title>
+<link rel="stylesheet" href="./styles/style.css" />
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="badge">Prof. di Informatica — Materiali Didattici</span>
+    <h1>Corso di Informatica della Classe X</h1>
+    <p>Programmazione a oggetti, UML e Java: syllabus, calendario, materiali, laboratori e registrazioni.</p>
+  </div>
+</header>
+
+<nav class="topbar">
+  <div class="wrap">
+    <a href="#syllabus">Syllabus del corso</a>
+    <a href="#calendario">Calendario delle lezioni</a>
+    <div class="dropdown">
+      <button class="dropbtn" type="button">Materiale didattico ▾</button>
+      <div class="dropdown-content">
+        <a href="#oop">Introduzione alla programmazione a oggetti</a>
+        <a href="#uml">I diagrammi UML</a>
+        <a href="#classi-java">Le classi in Java</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn" type="button">Attività di laboratorio ▾</button>
+      <div class="dropdown-content">
+        <a href="#lab1">La tua prima classe Java</a>
+        <a href="#lab2">Traduzione di un diagramma UML in Java</a>
+      </div>
+    </div>
+    <a href="#approfondimenti">Approfondimenti</a>
+    <a href="#stream">Stream</a>
+  </div>
+</nav>
+
+<main>
+<div class="wrap">
+
+<section id="syllabus" class="card">
+  <h2>Syllabus del corso</h2>
+  <p><strong>Obiettivi:</strong> comprendere la programmazione a oggetti, leggere e produrre diagrammi UML delle classi, progettare e implementare classi in Java.</p>
+  <div class="grid">
+    <div class="subcard"><h4>Modulo 1 — OOP</h4><p>Classi, oggetti, incapsulamento, costruttori, stato e comportamento. Cenni a ereditarietà e polimorfismo.</p><span class="tag">4 ore</span><span class="tag">Teoria + esempi</span></div>
+    <div class="subcard"><h4>Modulo 2 — UML</h4><p>Diagramma delle classi: attributi, metodi, visibilità, associazioni, molteplicità, generalizzazione.</p><span class="tag">4 ore</span><span class="tag">Modellazione</span></div>
+    <div class="subcard"><h4>Modulo 3 — Java</h4><p>Classi, campi, metodi, costruttori, <code class="inline">static</code>, getter/setter, test con <code class="inline">main</code>.</p><span class="tag">8 ore</span><span class="tag">Teoria + Lab</span></div>
+  </div>
+  <h3>Valutazione</h3>
+  <ul>
+    <li>Scritto: lettura di un diagramma UML (30%)</li>
+    <li>Laboratorio: implementazione classi Java (40%)</li>
+    <li>Progetto: modellazione + codice (30%)</li>
+  </ul>
+</section>
+
+<section id="calendario" class="card">
+  <h2>Calendario delle lezioni</h2>
+  <table>
+    <tr><th>#</th><th>Settimana</th><th>Argomento</th><th>Materiale</th></tr>
+    <tr><td>1</td><td>1</td><td>Presentazione corso + ripasso fondamenti</td><td><a href="#syllabus">Syllabus</a></td></tr>
+    <tr><td>2</td><td>2</td><td>Introduzione alla programmazione a oggetti</td><td><a href="#oop">Vai al materiale</a></td></tr>
+    <tr><td>3</td><td>3</td><td>I diagrammi UML delle classi</td><td><a href="#uml">Vai al materiale</a></td></tr>
+    <tr><td>4</td><td>4</td><td>Le classi in Java</td><td><a href="#classi-java">Vai al materiale</a></td></tr>
+    <tr><td>5</td><td>5</td><td>Lab: La tua prima classe Java</td><td><a href="#lab1">Vai al lab</a></td></tr>
+    <tr><td>6</td><td>6</td><td>Lab: Da UML a Java + verifica</td><td><a href="#lab2">Vai al lab</a></td></tr>
+  </table>
+</section>
+
+<section id="materiale" class="card">
+  <h2>Materiale didattico</h2>
+
+  <h3 id="oop">1. Introduzione alla programmazione a oggetti</h3>
+  <p>La <strong>programmazione a oggetti (OOP)</strong> organizza il software in <strong>oggetti</strong> con <strong>stato</strong> (attributi) e <strong>comportamento</strong> (metodi). La <strong>classe</strong> è lo stampo, l'<strong>oggetto</strong> è l'istanza.</p>
+  <ul>
+    <li><strong>Incapsulamento:</strong> campi <code class="inline">private</code>, interfaccia <code class="inline">public</code>.</li>
+    <li><strong>Costruttore:</strong> inizializza l'oggetto creato con <code class="inline">new</code>.</li>
+    <li><strong>Ereditarietà / Polimorfismo:</strong> riuso tramite gerarchie (cenni).</li>
+  </ul>
+
+  <h3 id="uml">2. I diagrammi UML</h3>
+  <p>Il <strong>diagramma delle classi</strong> ha riquadri <strong>nome / attributi / metodi</strong>, visibilità <code class="inline">+ - #</code>, <strong>associazioni</strong> con <strong>molteplicità</strong> e <strong>generalizzazione</strong> per l'ereditarietà.</p>
+<pre>+-------------------+
+|     Studente      |
++-------------------+
+| - matricola: int  |
+| - nome: String    |
++-------------------+
+| + studia(): void  |
++-------------------+
+        | 1..* frequenta
+        v
++-------------------+
+|      Corso        |
++-------------------+</pre>
+
+  <h3 id="classi-java">3. Le classi in Java</h3>
+<pre>public class Studente {
+    private int matricola;
+    private String nome;
+
+    public Studente(int matricola, String nome) {
+        this.matricola = matricola;
+        this.nome = nome;
+    }
+
+    public String getNome() { return nome; }
+    public void setNome(String nome) { this.nome = nome; }
+
+    public void studia() {
+        System.out.println(nome + " sta studiando.");
+    }
+
+    public static void main(String[] args) {
+        Studente s = new Studente(101, "Mario");
+        s.studia();
+    }
+}</pre>
+</section>
+
+<section id="laboratorio" class="card">
+  <h2>Attività di laboratorio</h2>
+
+  <h3 id="lab1">Lab 1 — La tua prima classe Java</h3>
+  <div class="subcard">
+    <p><strong>Obiettivo:</strong> classe <code class="inline">Libro</code> con <code class="inline">titolo</code>, <code class="inline">autore</code>, <code class="inline">pagine</code>.</p>
+    <ol>
+      <li>Crea il file <code class="inline">Libro.java</code>.</li>
+      <li>Campi <code class="inline">private</code> + costruttore + getter/setter.</li>
+      <li>Metodo <code class="inline">scheda()</code> per stampare la descrizione.</li>
+      <li>Nel <code class="inline">main</code> crea 2 oggetti e testali.</li>
+    </ol>
+<pre>public class Libro {
+    private String titolo;
+    private String autore;
+    private int pagine;
+
+    public Libro(String titolo, String autore, int pagine) {
+        this.titolo = titolo; this.autore = autore; this.pagine = pagine;
+    }
+    public void scheda() {
+        System.out.println(titolo + " di " + autore + " (" + pagine + " pp.)");
+    }
+}</pre>
+  </div>
+
+  <h3 id="lab2">Lab 2 — Traduzione di un diagramma UML in Java</h3>
+  <div class="subcard">
+    <p><strong>Regole:</strong> classe UML → classe Java; <code class="inline">- nome: Tipo</code> → campo privato; <code class="inline">+ nome()</code> → metodo pubblico; molteplicità <code class="inline">*</code> → <code class="inline">ArrayList</code>.</p>
+<pre>import java.util.ArrayList;
+public class Corso {
+    private String titolo;
+    private ArrayList&lt;Studente&gt; iscritti = new ArrayList&lt;&gt;();
+    public Corso(String titolo) { this.titolo = titolo; }
+    public void iscrivi(Studente s) { iscritti.add(s); }
+}</pre>
+    <p><strong>Esercizio:</strong> implementa Studente + Corso del diagramma sopra e verifica l'iscrizione in un <code class="inline">main</code>.</p>
+  </div>
+</section>
+
+<section id="approfondimenti" class="card">
+  <h2>Approfondimenti</h2>
+  <div class="grid">
+    <div class="subcard"><h4>Ereditarietà e interfacce</h4><p><code class="inline">extends</code>, classi astratte e <code class="inline">interface</code>.</p></div>
+    <div class="subcard"><h4>Aggregazione vs Composizione</h4><p>Legami deboli e forti tra oggetti, con esempi UML.</p></div>
+    <div class="subcard"><h4>Collection Framework</h4><p><code class="inline">ArrayList</code>, <code class="inline">HashMap</code>, for-each.</p></div>
+    <div class="subcard"><h4>Strumenti</h4><p>JDK, VS Code / IntelliJ, <code class="inline">javac</code> e <code class="inline">java</code>.</p></div>
+  </div>
+</section>
+
+<section id="stream" class="card">
+  <h2>Stream</h2>
+  <p>Dirette e registrazioni. Sostituisci <code class="inline">#</code> con i link reali (Meet / YouTube / Teams).</p>
+  <div class="grid">
+    <div class="subcard"><h4>Prossima diretta</h4><p>Lab guidato: da UML a Java — Q&amp;A.</p><a class="btn" href="#">Vai alla diretta</a></div>
+    <div class="subcard"><h4>Registrazioni</h4><p>OOP • UML • Classi Java.</p><a class="btn secondary" href="#">Apri playlist</a></div>
+  </div>
+</section>
+
+</div>
+</main>
+
+<footer>
+  Corso di Informatica della Classe X — Materiali del docente • Struttura da SOUL.md
+</footer>
+
+<script src="./script.js"></script>
+</body>
+</html>
