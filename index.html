@@ -17,11 +17,13 @@
 </header>
 
 <nav class="topbar">
-  <div class="wrap">
+  <div class="wrap nav-row">
+    <button id="menu-btn" type="button" aria-expanded="false" aria-controls="nav-links">☰ Menu</button>
+    <div id="nav-links" class="nav-links">
     <a href="#syllabus">Syllabus del corso</a>
     <a href="#calendario">Calendario delle lezioni</a>
     <div class="dropdown">
-      <button class="dropbtn" type="button">Materiale didattico ▾</button>
+      <button class="dropbtn" type="button" aria-haspopup="true">Materiale didattico ▾</button>
       <div class="dropdown-content">
         <a href="#oop">Introduzione alla programmazione a oggetti</a>
         <a href="#uml">I diagrammi UML</a>
@@ -29,7 +31,7 @@
       </div>
     </div>
     <div class="dropdown">
-      <button class="dropbtn" type="button">Attività di laboratorio ▾</button>
+      <button class="dropbtn" type="button" aria-haspopup="true">Attività di laboratorio ▾</button>
       <div class="dropdown-content">
         <a href="#lab1">La tua prima classe Java</a>
         <a href="#lab2">Traduzione di un diagramma UML in Java</a>
@@ -37,6 +39,7 @@
     </div>
     <a href="#approfondimenti">Approfondimenti</a>
     <a href="#stream">Stream</a>
+    </div>
   </div>
 </nav>
 
@@ -61,6 +64,7 @@
 
 <section id="calendario" class="card">
   <h2>Calendario delle lezioni</h2>
+  <div class="table-wrap">
   <table>
     <tr><th>#</th><th>Settimana</th><th>Argomento</th><th>Materiale</th></tr>
     <tr><td>1</td><td>1</td><td>Presentazione corso + ripasso fondamenti</td><td><a href="#syllabus">Syllabus</a></td></tr>
@@ -70,6 +74,7 @@
     <tr><td>5</td><td>5</td><td>Lab: La tua prima classe Java</td><td><a href="#lab1">Vai al lab</a></td></tr>
     <tr><td>6</td><td>6</td><td>Lab: Da UML a Java + verifica</td><td><a href="#lab2">Vai al lab</a></td></tr>
   </table>
+  </div>
 </section>
 
 <section id="materiale" class="card">
