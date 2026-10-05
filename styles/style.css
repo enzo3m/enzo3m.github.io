@@ -17,6 +17,19 @@
 
 html { scroll-behavior: smooth; }
 
+section[id] { scroll-margin-top: 4.5rem; }
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--muted);
+  outline-offset: 2px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 body {
   margin: 0;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
@@ -150,11 +163,6 @@ nav.topbar a.active {
 }
 
 .dropdown.open .dropdown-content { display: block; }
-
-@media (hover: hover) {
-  .dropdown:hover .dropdown-content,
-  .dropdown:focus-within .dropdown-content { display: block; }
-}
 
 .dropdown-content a {
   display: block;
@@ -317,6 +325,8 @@ footer {
   }
   nav.topbar a,
   nav.topbar button.dropbtn { width: auto; }
+  .dropdown:hover .dropdown-content,
+  .dropdown:focus-within .dropdown-content { display: block; }
   .dropdown-content {
     position: absolute;
     top: calc(100% + 6px);
